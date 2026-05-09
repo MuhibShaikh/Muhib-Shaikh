@@ -10,7 +10,7 @@ export default function SettingsPage() {
     <div className="max-w-4xl mx-auto space-y-8">
       <div>
         <h1 className="text-3xl font-bold">Settings</h1>
-        <p className="text-slate-400 mt-2">Manage your account preferences and security configurations.</p>
+        <p className="text-slate-400 mt-2">Manage your account preferences and platform configurations.</p>
       </div>
 
       <div className="grid grid-cols-1 gap-8">
@@ -79,12 +79,12 @@ export default function SettingsPage() {
           <CardContent>
             <div className="space-y-4">
               {[
-                { label: 'Critical Threat Alerts', desc: 'Get notified immediately when a critical threat is detected.', enabled: true },
-                { label: 'Weekly Security Summary', desc: 'A report of all your analyses from the past week.', enabled: false },
-                { label: 'API Usage Alerts', desc: 'Get notified when you reach 80% of your scan limit.', enabled: true },
+                { label: 'New Applicant Alerts', desc: 'Get notified immediately when someone applies to your project.', enabled: true },
+                { label: 'Weekly Startup Summary', desc: 'A report of all activity on your timeline from the past week.', enabled: false },
+                { label: 'Collaboration Messages', desc: 'Get notified when a student or startup sends you a message.', enabled: true },
               ].map((n, i) => (
                 <div key={i} className="flex items-center justify-between py-2">
-                  <div>
+                <div className="flex-1 mr-4">
                     <p className="text-sm font-medium">{n.label}</p>
                     <p className="text-xs text-slate-500">{n.desc}</p>
                   </div>

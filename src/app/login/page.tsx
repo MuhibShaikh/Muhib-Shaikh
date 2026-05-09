@@ -6,7 +6,7 @@ import { supabase, isDemoMode } from '@/lib/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Shield, Lock, Mail, ArrowRight } from 'lucide-react';
+import { Rocket, Lock, Mail, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { toast } from 'sonner';
 
@@ -47,11 +47,11 @@ export default function LoginPage() {
       <Card className="w-full max-w-md relative z-10">
         <CardHeader className="space-y-1 flex flex-col items-center">
           <div className="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center mb-4">
-            <Shield className="text-blue-500 w-8 h-8" />
+            <Rocket className="text-blue-500 w-8 h-8" />
           </div>
           <CardTitle className="text-2xl font-bold tracking-tight">Welcome back</CardTitle>
           <CardDescription>
-            Secure access to your Sandbox environment
+            Access your startup dashboard and projects
           </CardDescription>
         </CardHeader>
         <form onSubmit={handleLogin}>

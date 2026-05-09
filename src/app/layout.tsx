@@ -9,8 +9,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Sandbox | AI-Powered Cybersecurity Platform",
-  description: "Securely analyze URLs, prompts, and payloads in isolated environments with Sandbox.",
+  title: "Sandbox | Build the Future Together",
+  description: "The modern collaboration platform where startups build in public and talented students join the journey.",
 };
 
 export default function RootLayout({

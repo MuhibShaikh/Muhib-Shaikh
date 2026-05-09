@@ -1,77 +1,61 @@
-# Sandbox — AI-Powered Cybersecurity Platform
+# Sandbox — Startup Collaboration Platform
 
-Sandbox is a modern, production-ready full-stack web application designed for safely testing suspicious content, including URLs, LLM prompts, code snippets, and files, inside isolated environments with AI-powered security analysis.
+Sandbox is a calm, modern platform where startups build in public and students join ambitious teams to collaborate on real-world projects.
 
 ## 🚀 Features
 
-- **AI-Powered Analysis**: Instant threat detection and risk scoring for various content types.
-- **Isolated Environments**: Safety-first approach with virtualized sandboxing.
-- **Modern Dashboard**: High-fidelity UI for monitoring security stats and analysis history.
-- **Demo Mode**: Automatic fallback to local mock data if Supabase credentials are missing.
-- **Robust Auth**: Secure user authentication via Supabase Auth.
-- **Responsive Design**: Polished experience across desktop, tablet, and mobile.
+- **Build in Public Timeline**: Chronological milestones, progress logs, and updates from startups.
+- **Project Discovery**: Students can explore projects, filter by skills/commitment, and apply directly.
+- **Application Management**: A streamlined flow for startups to review applicants and for students to track their applications.
+- **Role-Based Experience**: Tailored dashboards for Students, Startups, and Investors.
+- **Modern Aesthetic**: A minimal, focused UI inspired by Linear, Vercel, and Notion.
+- **Demo Mode**: Seamless experience even without Supabase credentials.
 
 ## 🛠 Tech Stack
 
-- **Framework**: [Next.js 15+](https://nextjs.org/) (App Router)
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
 - **Animations**: [Framer Motion](https://www.framer.com/motion/)
 - **Database & Auth**: [Supabase](https://supabase.com/)
-- **Charts**: [Recharts](https://recharts.org/)
 - **Icons**: [Lucide React](https://lucide.dev/)
 
 ## 🏁 Getting Started
 
-### 1. Prerequisites
-
-- Node.js 18.x or later
-- npm or yarn
-
-### 2. Installation
+### 1. Installation
 
 ```bash
-git clone <repository-url>
-cd sandbox
 npm install
 ```
 
-### 3. Environment Setup
+### 2. Environment Setup
 
-Create a `.env.local` file in the root directory (or copy from `.env.example`):
+Copy `.env.example` to `.env.local`:
 
 ```bash
-NEXT_PUBLIC_SUPABASE_URL=your-project-url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+cp .env.example .env.local
 ```
 
-*Note: If these variables are missing, the app will automatically run in **Demo Mode**.*
+### 3. Database Setup (Supabase)
 
-### 4. Supabase Setup (Optional)
+1. Create a new project on [Supabase](https://supabase.com/).
+2. Run the SQL migrations in the `supabase/migrations` folder using the Supabase SQL Editor (run `initial_schema.sql` first, then `startup_transformation.sql`).
 
-If you want to use a real database:
-1. Create a new project at [Supabase](https://app.supabase.com/).
-2. Run the SQL provided in `supabase/migrations/20240509000000_initial_schema.sql` in the Supabase SQL Editor.
-3. Enable Email Auth in the Supabase Dashboard.
-
-### 5. Running the App
+### 4. Run Development Server
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📁 Key Directories
 
-## 📁 Project Structure
-
-- `src/app`: Next.js App Router pages and layouts.
-- `src/components`: Reusable UI components and feature-specific components.
-- `src/hooks`: Custom React hooks (Auth, etc.).
-- `src/lib`: Supabase clients and utility functions.
-- `src/services`: API services and mock data handlers.
-- `src/types`: TypeScript interfaces and types.
+- `src/app`: Application routes and layouts.
+- `src/components`: UI components (Radix-based) and layouts.
+- `src/hooks`: Custom hooks for Auth and state management.
+- `src/services`: Mock and real API service handlers.
+- `src/types`: Centralized TypeScript definitions.
 - `supabase/migrations`: Database schema and RLS policies.
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+MIT

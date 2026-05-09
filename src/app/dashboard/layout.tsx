@@ -4,8 +4,9 @@ import { Sidebar } from '@/components/layout/Sidebar';
 import { DemoBanner } from '@/components/layout/DemoBanner';
 import { isDemoMode } from '@/lib/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { Skeleton } from '@/components/ui/skeleton';
+import { useEffect } from 'react';
 
 export default function DashboardLayout({
   children,
@@ -13,6 +14,13 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   const { user, loading } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!loading && !user && !isDemoMode) {
+      router.push('/login');
+    }
+  }, [user, loading, router]);
 
   if (loading) {
     return (
@@ -38,7 +46,7 @@ export default function DashboardLayout({
   }
 
   if (!user && !isDemoMode) {
-    redirect('/login');
+    return null;
   }
 
   return (
